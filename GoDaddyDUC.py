@@ -1,7 +1,7 @@
 # GoDaddy DUC Client
-# Version 1.1
+# Version 1.2
 # Updates A Name on GoDaddy Domain Automatically
-# Python 3
+# Python 3.8
 # This script is to be automatically run by another program at a certain time interval
 # Lexi Geraghty 2020
 # Email me at: goldenkrew3000@naver.com if you have any issues/suggestions
@@ -123,7 +123,7 @@ else:
     # Generate GoDaddy DNS Data to send
     GoDaddy_DNS_Data = [{
         "data": ExternalIP,
-        "name": GoDaddy_DNS_Name,
+        "name": GoDaddy_A_Name,
         "ttl": GoDaddy_DNS_TTL,
         "type": "A"
     }]
