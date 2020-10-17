@@ -2,9 +2,9 @@
 A recent Dynamic IP Updater for GoDaddy
 
 # Dependencies
-Python 3 (Tested on Python 3.8.5)
-json - Included with Python 3
-urllib3 - Included with Python 3
+Python 3 (Tested on Python 3.8.5)  
+json - Included with Python 3  
+urllib3 - Included with Python 3  
 
 # How to Use
 ## Step 1 - Get a GoDaddy Production API Key
