@@ -1,5 +1,5 @@
 # GoDaddy DUC Client
-# Version 1.2
+# Version 1.3
 # Updates A Name on GoDaddy Domain Automatically
 # Python 3.8
 # This script is to be automatically run by another program at a certain time interval
@@ -31,7 +31,6 @@ GoDaddy_API_Key = "" # Production API Key
 GoDaddy_API_Secret = "" # Production API Secret
 
 # GoDaddy DNS Settings
-GoDaddy_DNS_Name = "" # GoDaddy Domain A Name
 GoDaddy_DNS_TTL = 600 # GoDaddy Domain TTL
 
 # GoDaddy URLs
