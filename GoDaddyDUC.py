@@ -1,9 +1,9 @@
 # GoDaddy DUC Client
-# Version 1.3
+# Version 2
 # Updates A Name on GoDaddy Domain Automatically
 # Python 3.8
 # This script is to be automatically run by another program at a certain time interval
-# Lexi Geraghty 2020
+# Malexty 2020
 # Email me at: goldenkrew3000@naver.com if you have any issues/suggestions
 
 import urllib3
@@ -17,11 +17,13 @@ debug = True
 # List Preconfigured Settings
 # False = List Preconfigured Settings off
 # True = List Preconfigured Settings on
+# WARNING THIS LISTS GODADDY AUTHORIZATION KEYS
 preconfig_debug = True
 
 # Recheck IP After Setting it Setting
-# False
-# True
+# False = Does not perform verification (does not make a difference to the function of this program)
+# True = Gets the A record after sending new ip to verify if it worked
+# NOTE THIS SEEMS TO WORK FROM PREVIOUS TESTING BUT YOU MIGHT HAVE A DIFFERENT EXPERIENCE
 recheck_after = True
 
 # GoDaddy Account and Domain Settings
