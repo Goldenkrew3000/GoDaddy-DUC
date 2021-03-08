@@ -6,6 +6,7 @@ A Dynamic IP Update Client (DUC) for GoDaddy
 blah blah blah in Python folder
 ## C
 blah blah blah in C folder
+use compile.sh to compile
 
 NOTE FOR LATER PUT COMPILE INSTRUCTIONS IN FOLDER README's
 
