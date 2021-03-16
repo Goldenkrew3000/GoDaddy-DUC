@@ -1,3 +1,9 @@
+/*
+// getExternalIP.c
+// What this file does:
+// > Receives config from main.c, Makes HTTPS Request, Parse JSON, Returns result to main.c
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -35,7 +41,7 @@ char* getExternalIP(char* sExternalIpUrl) {
 
     get_request req = {.buffer = NULL, .len = 0, .buflen = 0};
 
-    curl = curl_easy_init(); // This causes a memory leak but there is nothing you can do about it yet
+    curl = curl_easy_init();
 
     struct curl_slist* contentheader = NULL;
     contentheader = curl_slist_append(contentheader, "Content-Type: application/json");
@@ -44,7 +50,6 @@ char* getExternalIP(char* sExternalIpUrl) {
     if (curl)
     {
         curl_easy_setopt(curl, CURLOPT_VERBOSE, 1);
-        //curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
         curl_easy_setopt(curl, CURLOPT_URL, "https://ifconfig.me/all.json");
         curl_easy_setopt(curl, CURLOPT_HTTPHEADER, contentheader);
         req.buffer = malloc(CHUNK_SIZE);
@@ -61,10 +66,6 @@ char* getExternalIP(char* sExternalIpUrl) {
         curl_easy_cleanup(curl);
     }
 
-    //printf("Result: %u\n", res);
-    //printf("Total bytes received: %zu\n", req.len);
-    //printf("Received:\n%s\n", req.buffer);
-
     // Added the two below because it gets rid of the valgrind memory leak warning
     curl_slist_free_all(contentheader);
     curl_easy_cleanup(curl);
@@ -73,7 +74,6 @@ char* getExternalIP(char* sExternalIpUrl) {
 
     cJSON *json = cJSON_Parse(req.buffer);
     char *string = cJSON_Print(json);
-    //printf("%s\n", string);
 
     cJSON *ipaddr = cJSON_GetObjectItem(json, "ip_addr");
     char *sIpaddr = cJSON_Print(ipaddr);
@@ -81,7 +81,7 @@ char* getExternalIP(char* sExternalIpUrl) {
     if (sIpaddr[0] == '"') 
     memmove(sIpaddr, sIpaddr+1, strlen(sIpaddr));
 
-    sIpaddr[strlen(sIpaddr)-1] = '\0'; // Remove last character from string
+    sIpaddr[strlen(sIpaddr)-1] = '\0';
 
     // The stuff below is to free memory to avoid memory leaks
     cJSON_Delete(json);
