@@ -10,11 +10,16 @@
 
 int main()
 {
-    // Create Variables
+    /*
+    // Variables
+    */
+
+    // URLs
     char sExternalIpUrl[] = "https://ifconfig.me/all.json";
     char sGoDaddyIpUrlPartA[] = "https://api.godaddy.com/v1/domains/";
     char sGoDaddyIpUrlPartB[] = "/records/A/";
 
+    // Variables to get info from the config json file
     char sGoDaddyDomain[1024];
     char sGoDaddyAName[1024];
     char sGoDaddyTTL[1024];
@@ -29,17 +34,25 @@ int main()
     char* oGoDaddyApiKey = NULL;
     char* oGoDaddyApiSecret = NULL;
 
-    // Create Receive Variables
+    // Variables to store data received from the functions
     char* sExternalIp = "";
     char* sGoDaddyIp = "";
     char* sEquals = "";
     char* sGoDaddySend = "";
 
+    /*
+    // End of variables
+    */
+
     // Print title
     printf("GoDaddy Dynamic IP Updater\n");
     printf("Malexty 2021\n");
 
-    // Get JSON from config.json
+    /*
+    // Receive configuration from config json
+    */
+
+    // Get JSON from config.json into variable
     FILE *f;
     f = fopen("config.json", "rb");
     fseek(f, 0, SEEK_END);
@@ -81,6 +94,10 @@ int main()
     strcpy(sGoDaddyApiSecret, oGoDaddyApiSecret);
     printf("%s\n", sGoDaddyApiSecret);
 
+    /*
+    // Receive, Compare, and potentially Send IPs
+    */
+
     // Receive External IP
     printf("Receiving External IP\n");
     sExternalIp = getExternalIP(sExternalIpUrl);
@@ -107,9 +124,12 @@ int main()
         printf("IPs match\n");
     }
 
-    printf("Freeing ExternalIP\n");
-    free(sExternalIp); // Free memory after return from getExternalIP
-    printf("Freeing GoDaddy\n");
+    /*
+    // Free Memory to avoid memory leaks
+    */
+
+    printf("Freeing Memory to avoid Memory Leaks\n");
+    free(sExternalIp);
     free(fString);
     free(sGoDaddyIp);
     free(oGoDaddyDomain);
