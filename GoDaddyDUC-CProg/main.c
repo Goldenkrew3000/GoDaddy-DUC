@@ -1,3 +1,8 @@
+/*
+// GoDaddy DUC
+// Malexty 2021
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

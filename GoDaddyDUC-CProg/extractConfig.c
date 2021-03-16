@@ -1,8 +1,13 @@
+/*
+// This file basically just takes the json text, parses it, and returns the result
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <cjson/cJSON.h>
 
+// Extract GoDaddy Domain from config json
 char* extract_godaddy_domain(char* jsonString)
 {
     cJSON *oJSON = cJSON_Parse(jsonString);
@@ -19,6 +24,7 @@ char* extract_godaddy_domain(char* jsonString)
     return sDomainName;
 }
 
+// Extract GoDaddy A Name from config json
 char* extract_godaddy_a_name(char* jsonString)
 {
     cJSON *oJSON = cJSON_Parse(jsonString);
@@ -35,6 +41,7 @@ char* extract_godaddy_a_name(char* jsonString)
     return sAName;
 }
 
+// Extract GoDaddy TTL from config json
 char* extract_godaddy_ttl(char* jsonString)
 {
     cJSON *oJSON = cJSON_Parse(jsonString);
@@ -51,6 +58,7 @@ char* extract_godaddy_ttl(char* jsonString)
     return sTTL;
 }
 
+// Extract GoDaddy Type from config json
 char* extract_godaddy_type(char* jsonString)
 {
     cJSON *oJSON = cJSON_Parse(jsonString);
@@ -67,6 +75,7 @@ char* extract_godaddy_type(char* jsonString)
     return sType;
 }
 
+// Extract GoDaddy API Key from config json
 char* extract_api_key(char* jsonString)
 {
     cJSON *oJSON = cJSON_Parse(jsonString);
@@ -83,6 +92,7 @@ char* extract_api_key(char* jsonString)
     return sApiKey;
 }
 
+// Extract GoDaddy API Secret from config json
 char* extract_api_secret(char* jsonString)
 {
     cJSON *oJSON = cJSON_Parse(jsonString);
