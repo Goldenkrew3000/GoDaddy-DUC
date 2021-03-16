@@ -1,5 +1,7 @@
 /*
-// This file basically just takes the json text, parses it, and returns the result
+// extractConfig.c
+// What this file does:
+// > Receives JSON Text, Parses it, and Returns the result
 */
 
 #include <stdio.h>

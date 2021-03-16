@@ -1,4 +1,10 @@
 /*
+// main.c
+// What this file does:
+// > Controls all of the functions in the other files
+*/
+
+/*
 // GoDaddy DUC
 // Malexty 2021
 */
