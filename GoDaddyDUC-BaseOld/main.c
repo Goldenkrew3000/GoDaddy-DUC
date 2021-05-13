@@ -12,8 +12,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <cjson/cJSON.h>
 
-#include "cJSON.h"
 #include "extractConfig.h"
 #include "getExternalIP.h"
 #include "getGoDaddyIP.h"

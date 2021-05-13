@@ -1,5 +1,5 @@
-output: main.o extractConfig.o getExternalIP.o getGoDaddyIP.o sendGoDaddyIP.o cJSON.o
-	gcc main.o extractConfig.o getExternalIP.o getGoDaddyIP.o sendGoDaddyIP.o cJSON.o -lcurl -o godaddy-duc
+output: main.o extractConfig.o getExternalIP.o getGoDaddyIP.o sendGoDaddyIP.o
+	gcc main.o extractConfig.o getExternalIP.o getGoDaddyIP.o sendGoDaddyIP.o -lcurl -lcjson -o godaddy-duc
 
 main.o: main.c
 	gcc -c main.c
@@ -15,9 +15,6 @@ getGoDaddyIP.o: getGoDaddyIP.c
 
 sendGoDaddyIP.o: sendGoDaddyIP.c
 	gcc -c sendGoDaddyIP.c
-
-cJSON.o: cJSON.c
-	gcc -c cJSON.c
 
 clean:
 	rm *.o godaddy-duc

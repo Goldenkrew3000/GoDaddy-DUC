@@ -2,9 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <curl/curl.h>
-
-#include "cJSON.h"
-#include "getGoDaddyIP.h"
+#include <cjson/cJSON.h>
 
 #define CHUNK_SIZE 2048
 

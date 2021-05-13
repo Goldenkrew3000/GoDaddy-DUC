@@ -2,9 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <curl/curl.h>
-
-#include "cJSON.h"
-#include "sendGoDaddyIP.h"
+#include <cjson/cJSON.h>
 
 char* sendGoDaddyIP(char* sGoDaddyDomain, char* sGoDaddyAName, char* sGoDaddyTTL, char* sGoDaddyType, char* sGoDaddyApiKey, char* sGoDaddyApiSecret, char* sGoDaddyIpUrlPartA, char* sGoDaddyIpUrlPartB, char* sExternalIp)
 {

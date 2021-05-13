@@ -7,9 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-#include "cJSON.h"
-#include "extractConfig.h"
+#include <cjson/cJSON.h>
 
 // Extract GoDaddy Domain from config json
 char* extract_godaddy_domain(char* jsonString)
